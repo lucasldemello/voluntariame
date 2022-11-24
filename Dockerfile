@@ -17,14 +17,6 @@ WORKDIR /voluntariarme
 COPY Gemfile ./Gemfile
 COPY Gemfile.lock ./Gemfile.lock
 
-RUN gem install rails bundler
+RUN bundle install
 
 COPY . .
-
-EXPOSE 3000
-EXPOSE 3001
-EXPOSE 3003
-EXPOSE 11211
-
-ENTRYPOINT ["sh", "./entrypoint.sh"]
-# ENTRYPOINT ["/bin/bash"]
