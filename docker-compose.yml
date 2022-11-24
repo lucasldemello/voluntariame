@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: voluntariarme
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+    volumes:
+      - .:/voluntariarme:cached
+    ports:
+      - "3006:3000"
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+  db:
+    container_name: voluntariarme-db
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "33063:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
