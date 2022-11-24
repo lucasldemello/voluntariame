@@ -20,3 +20,12 @@ COPY Gemfile.lock ./Gemfile.lock
 RUN bundle install
 
 COPY . .
+
+EXPOSE 3000
+EXPOSE 3001
+EXPOSE 3003
+EXPOSE 11211
+
+ENV RAILS_ENV development
+
+ENTRYPOINT ["sh", "./entrypoint.sh"]

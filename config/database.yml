@@ -19,14 +19,26 @@ default: &default
 
 development:
   <<: *default
+  host: db
+  port: 3306
   database: voluntariarme_development
+  username: root
+  password: root
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: db
+  port: 3306
   database: voluntariarme_test
+  username: root
+  password: root
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
