@@ -57,6 +57,7 @@ gem 'sass-rails'
 
 # Plus integrations with:
 gem 'devise'
+gem 'devise-i18n'
 gem 'draper'
 gem 'pundit'
 
