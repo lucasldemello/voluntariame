@@ -10,11 +10,12 @@ services:
         max-file: "5"
         max-size: "10m"
     volumes:
-      - .:/voluntariarme
+      - .:/voluntariarme:cached
     ports:
       - "3003:3000"
     depends_on:
       - db
+      - cache
     tty: true
     stdin_open: true
   db:
@@ -26,3 +27,9 @@ services:
       - "33063:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
+  cache:
+    container_name: voluntariarme-cache
+    image: memcached
+    restart: always
+    ports:
+      - "11218:11211"
