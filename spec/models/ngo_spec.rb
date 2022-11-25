@@ -6,6 +6,10 @@ RSpec.describe Ngo, type: :model do
     expect(subject).to be_valid
   end
 
+  describe 'Associations' do
+    it { should have_many(:contacts) }
+  end
+
   describe "validations" do
     it{ is_expected.to validate_presence_of :name }    
     it{ is_expected.to validate_presence_of :description }

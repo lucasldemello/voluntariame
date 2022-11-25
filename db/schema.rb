@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_023114) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_045318) do
   create_table "active_admin_comments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -37,6 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_023114) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "phone"
+    t.string "cellphone"
+    t.string "instagram"
+    t.bigint "ngo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ngo_id"], name: "index_contacts_on_ngo_id"
+  end
+
   create_table "ngos", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -56,4 +67,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_023114) do
     t.decimal "longitude", precision: 10, scale: 6
   end
 
+  add_foreign_key "contacts", "ngos"
 end
