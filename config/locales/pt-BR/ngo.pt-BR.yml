@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    attributes:
+      ngo:
+        name: Nome
+        description: Descrição
+        cnpj: CNPJ
+        street: Rua
+        number: Número
+        district: Bairro
+        city: Cidade
+        state: Estado
+        country: País
+    models:
+      ngo:
+        one: ONG
+        other: ONGs
