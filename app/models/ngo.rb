@@ -8,10 +8,18 @@ class Ngo < ApplicationRecord
     validates :description, length: { maximum: 500}
     validates :cnpj, length: {is: 14}, allow_blank: true
 
+    geocoded_by :address
+    after_validation :geocode 
+
+
     before_save :set_country
 
     private
+    def address
+        [street, number, district, city, state, country].compact.join(', ')
+    end
+
     def set_country
-        country = 'Brazil'
+        country = 'Brasil'
     end
 end
