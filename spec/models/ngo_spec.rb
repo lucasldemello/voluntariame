@@ -10,6 +10,8 @@ RSpec.describe Ngo, type: :model do
 
   describe 'Associations' do
     it { should have_many(:contacts) }
+    it { should have_many(:activities) }
+    it { should have_many(:ngo_activities) }
   end
 
   describe 'validations' do

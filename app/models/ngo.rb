@@ -1,5 +1,7 @@
 class Ngo < ApplicationRecord
-    has_many :contacts 
+    has_many :contacts
+    has_many :ngo_activities
+    has_many :activities, through: :ngo_activities
 
     validates :name, :description, :website, :street, :district, :city, :state, :email, presence: true
     validates :name, length: { minimum: 5}
