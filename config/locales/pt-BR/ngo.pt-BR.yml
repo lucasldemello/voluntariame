@@ -11,6 +11,7 @@ pt-BR:
         city: Cidade
         state: Estado
         country: País
+        verified: Verificado
     models:
       ngo:
         one: ONG
