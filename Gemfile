@@ -60,6 +60,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'draper'
 gem 'pundit'
+gem 'geocoder'
 
 
 group :development, :test do
