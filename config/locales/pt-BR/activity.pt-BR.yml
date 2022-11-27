@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    attributes:
+      activity:
+        name: Nome
+        used_count: Utilizações
+    models:
+      activity:
+        one: Atividade
+        other: Atividades

@@ -12,6 +12,7 @@ pt-BR:
         state: Estado
         country: País
         verified: Verificado
+        activities: Atividades
     models:
       ngo:
         one: ONG

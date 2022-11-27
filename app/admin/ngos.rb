@@ -5,7 +5,7 @@ ActiveAdmin.register Ngo do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :description, :cnpj, :website, :street, :number, :district, :city, :state, :country, :email, activity_ids: []
+  permit_params :name, :description, :cnpj, :website, :street, :number, :district, :city, :state, :country, :email, :latitude, :longitude, activity_ids: [] 
 
   filter :name
   filter :verified
@@ -34,6 +34,11 @@ ActiveAdmin.register Ngo do
 
     inputs "Ramos de atuação" do
       f.input :activities, as: :check_boxes
+    end
+
+    inputs "Coordenadas" do
+      f.input :latitude
+      f.input :longitude
     end
 
     actions
