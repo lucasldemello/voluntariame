@@ -58,7 +58,7 @@
 
 .search-container input {
     width: 100%;
-    font-size: 25px;
+    font-size: 22px;
     background-color: transparent;
     border: none;
     color: white;
@@ -190,4 +190,9 @@
 
 .store-container-background:hover {
     background-color: #ccc;
+}
+
+svg#icon-search {
+    color: white;
+    font-size: large;
 }

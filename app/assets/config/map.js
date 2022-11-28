@@ -25,6 +25,14 @@ window.onload = function() {
     startPos["longitude"] = -56.910557567447384;
 
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+
+    var input = document.getElementById("zip-code-input");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("icon-search").click();
+        }
+    });
 };
 
 function initMap() {
@@ -50,6 +58,11 @@ function loadNgos(){
     [...ngos_sets].forEach(function(ele) {
         ngos.push(ele.dataset)
     });
+
+    if (ngos.length === 0){
+        return
+    }
+
     showNgosMarkers(ngos);
     setOnClickListener(ngos);
 
