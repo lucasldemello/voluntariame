@@ -4,6 +4,19 @@ var infoWindow;
 var startPos = {};
 
 window.onload = function() {
+    var src = document.getElementById("location-input"),
+                dst = document.getElementById("search");
+                src.addEventListener('input', function() {
+                    dst.value = src.value;
+                });
+
+                var input = document.getElementById("location-input");
+                input.addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        document.getElementById("icon-search").click();
+                    }
+                });
     var geoOptions = {
         maximumAge: 5 * 60 * 1000
     }
@@ -25,14 +38,6 @@ window.onload = function() {
     startPos["longitude"] = -56.910557567447384;
 
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
-
-    var input = document.getElementById("zip-code-input");
-    input.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("icon-search").click();
-        }
-    });
 };
 
 function initMap() {
@@ -60,7 +65,7 @@ function loadNgos(){
     });
 
     if (ngos.length === 0){
-        return
+        return false
     }
 
     showNgosMarkers(ngos);
@@ -101,13 +106,13 @@ function buildHtml(name, address, phoneNumber, website, latLng){
                 ${name}
             </div>
             <div class="ngo-info-status">
-                ${website}
+                <i class="fas fa-globe"></i> ${website}
             </div>
             <div class="ngo-info-address">
                 <div class="circle">
                     <i class="fas fa-location-arrow"></i> 
                 
-                <a title="Get directions"
+                <a title="Veja a rota"
                 href='https://www.google.com/maps/dir/?api=1&origin=${startPos["latitude"]},${startPos["longitude"]}&destination=${latLng.lat()},${latLng.lng()}' target="_blank">${address}</a>
                 </div>
                 </div> 

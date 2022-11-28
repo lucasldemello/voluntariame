@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @ngos = Ngo.all.includes(:activities)
+    @ngos = if params['search'].present?
+              Ngo.search_ngos(params['search'])
+            else
+              Ngo.all.includes(:activities)
+            end
   end
 end

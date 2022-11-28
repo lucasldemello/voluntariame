@@ -21,6 +21,17 @@
         </div>
         <div class="stores-list-container">
             <div class="stores-list">
+                <% if @ngos.empty? %>
+                    <div class="store-container">
+                        <div class="store-info-container">
+                            <div class="store-address">
+                                <span>Não foi possível encontrar ONGs</span>
+                                <span>com os parâmetros informados</span>
+                                <span>Revise a sua pesquisa</span>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
                 <% @ngos.each_with_index do |ngo, index| %>
                     <div class="store-container">
                         <div class="store-info-container"
@@ -34,7 +45,7 @@
                         >
                             <div class="store-address">
                                 <span><%= ngo.name %></span>
-                                <span><%= ngo.address %></span>
+                                <span style='font-size: initial'><%= ngo.address %></span>
                             </div>
                             <div class="store-phone-number"> <%= ngo.activities_description  %> </div>
                         </div>
@@ -54,13 +65,6 @@
             src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAPS_API_KEY']%>&callback=initMap">
         </script>
         <script>
-            window.onload = function() {
-                var src = document.getElementById("location-input"),
-                dst = document.getElementById("search");
-                src.addEventListener('input', function() {
-                    dst.value = src.value;
-                });
-            };
         </script>
     </body>
 </html>
