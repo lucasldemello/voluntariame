@@ -19,6 +19,14 @@ class Ngo < ApplicationRecord
     [street, number, district, city, state, country].compact.join(', ')
   end
 
+  def short_address
+    [street, number, district].compact.join(', ')
+  end
+
+  def activities_description
+    activities.map {|x| x.name}.compact.join(', ')
+  end
+
   private
 
   def set_country
