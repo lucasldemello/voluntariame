@@ -1,0 +1,66 @@
+<%= javascript_include_tag "map" %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDtifhn1_Dw9BNhRGINfb3f5l04WhS_wcs&callback=initMap" %>
+<!DOCTYPE html>
+<html>
+    <header>
+        <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    </header>
+    <body>
+        <div class="title">Voluntariar me</div>
+        <div hidden>
+         <%= form_with(url: '/home/index', method: 'get', local: true) do %>
+            <%= text_field_tag(:search) %>
+            <%= submit_tag("Search", id: 'submit_button') %>
+        <% end %>
+        </div>
+        <div class="search-container">
+            <div class="search">
+                <input id="location-input" type="text" placeholder="Informe uma cidade ou estado" value="<%= params['search'] %>"/>
+                <i id="icon-search" class="fas fa-search" onclick="document.getElementById('submit_button').click();"></i>
+            </div>
+        </div>
+        <div class="stores-list-container">
+            <div class="stores-list">
+                <% @ngos.each_with_index do |ngo, index| %>
+                    <div class="store-container">
+                        <div class="store-info-container"
+                                data-index='<%= index+1%>' 
+                                data-name="<%= ngo.name %>"
+                                data-address="<%= ngo.short_address %>"
+                                data-activities="<%= ngo.activities_description %>" 
+                                data-latitude='<%= ngo.latitude %>' 
+                                data-longitude='<%= ngo.longitude %>'
+                                data-website="<%= ngo.website %>"
+                        >
+                            <div class="store-address">
+                                <span><%= ngo.name %></span>
+                                <span><%= ngo.address %></span>
+                            </div>
+                            <div class="store-phone-number"> <%= ngo.activities_description  %> </div>
+                        </div>
+                        <div class="store-number-container">
+                            <div class="store-number">
+                                <%= index + 1 %> 
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <div id="map">
+        </div> 
+        <!-- You must replace 'googleMapsAPIKey' with a valid Google Maps API key in order to properly execute -->
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAPS_API_KEY']%>&callback=initMap">
+        </script>
+        <script>
+            window.onload = function() {
+                var src = document.getElementById("location-input"),
+                dst = document.getElementById("search");
+                src.addEventListener('input', function() {
+                    dst.value = src.value;
+                });
+            };
+        </script>
+    </body>
+</html>
