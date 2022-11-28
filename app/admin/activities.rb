@@ -5,7 +5,7 @@ ActiveAdmin.register Activity do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :name, :used_count
+  permit_params :name, :used_count
   #
   # or
   #
