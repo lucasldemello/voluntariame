@@ -150,12 +150,14 @@
 }
 
 .store-info-status {
+    font-size: 12px;
     margin-top: 6px;
     border-bottom: 1px solid #00000029;
     padding-bottom: 6px;
 }
 
 .store-info-address, .store-info-phone {
+    font-size: 12px;
     margin-top: 8px;
     display: flex;
     align-items: center;
