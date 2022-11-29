@@ -14,5 +14,6 @@ FactoryBot.define do
     email { "MyString" }
     latitude { 1.5 }
     longitude { 1.5 }
+    phone_number {"48988437939"}
   end
 end
