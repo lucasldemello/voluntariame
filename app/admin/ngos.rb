@@ -5,7 +5,7 @@ ActiveAdmin.register Ngo do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :description, :cnpj, :website, :street, :number, :district, :city, :state, :country, :email, :latitude, :longitude, activity_ids: [] 
+  permit_params :name, :description, :cnpj, :phone_number, :website, :street, :number, :district, :city, :state, :country, :email, :latitude, :longitude, activity_ids: [] 
 
   filter :name
   filter :verified
@@ -23,6 +23,7 @@ ActiveAdmin.register Ngo do
       input :name 
       input :description
       input :cnpj
+      input :phone_number
       input :website
       input :email
       input :street 

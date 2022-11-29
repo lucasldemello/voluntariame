@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_26_032825) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_232600) do
   create_table "active_admin_comments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -44,17 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_032825) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "phone"
-    t.string "cellphone"
-    t.string "instagram"
-    t.bigint "ngo_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ngo_id"], name: "index_contacts_on_ngo_id"
-  end
-
   create_table "ngo_activities", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "ngo_id", null: false
     t.bigint "activity_id", null: false
@@ -81,9 +70,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_032825) do
     t.datetime "updated_at", null: false
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
+    t.string "phone_number", null: false
   end
 
-  add_foreign_key "contacts", "ngos"
   add_foreign_key "ngo_activities", "activities"
   add_foreign_key "ngo_activities", "ngos"
 end

@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class Ngo < ApplicationRecord
-  has_many :contacts
   has_many :ngo_activities
   has_many :activities, through: :ngo_activities, dependent: :destroy
 
-  validates :name, :description, :website, :street, :district, :city, :state, :email, presence: true
+  validates :name, :description, :website, :street, :district, :city, :state, :email, :phone_number, presence: true
   validates :name, length: { minimum: 5 }
   validates :description, length: { maximum: 1000 }
   validates :cnpj, length: { is: 14 }, allow_blank: true
