@@ -1,5 +1,5 @@
 <!-- Inserir descrição do projeto -->
-Voluntariarme é um projeto utilizando Ruby on Rails com o intuito de criar uma PoC (Proof of concept) de um localizador de ONGs baseada em sua geolocalização. Dessa forma o visitante do site, recebe uma lista de ONGs cadastradas no Brasil. A partir do momento de pesquisa, irá ser retornado todos os registros de ONGs em um raio de 20 km. 
+Voluntariarme é um projeto utilizando Ruby on Rails com o intuito de criar uma PoC (Proof of concept) de um localizador de ONGs baseada em sua geolocalização. Dessa forma o visitante do site, recebe uma lista de ONGs cadastradas no Brasil. A partir do momento de pesquisa, irá ser retornado todos os registros de ONGs em um raio de 20 km ou no caso de informar um Estado as ONGs cadastradas no mesmo. 
 
 ## Screenshots
 <p align="center">
