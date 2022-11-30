@@ -7,14 +7,67 @@
 #   Character.create(name: "Luke", movie: movies.first)
 AdminUser.first_or_create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-Activity.find_or_create_by(name: 'Proteção a animais')
-Activity.find_or_create_by(name: 'Religião')
-Activity.find_or_create_by(name: 'Meio Ambiente')
-Activity.find_or_create_by(name: 'Educação')
-Activity.find_or_create_by(name: 'Assistência Social')
-Activity.find_or_create_by(name: 'Saúde')
-Activity.find_or_create_by(name: 'Comunidade')
-Activity.find_or_create_by(name: 'Defesa de minorias')
-Activity.find_or_create_by(name: 'Empreendedorismo')
-Activity.find_or_create_by(name: 'Proteção Infantil')
-Activity.find_or_create_by(name: 'Arte e Cultura')
+Ngo.create!([
+    {id: 272 , name: "ONG São Roque", description: "A ONG São Roque surgiu a partir da mobilização de um grupo de senhoras voluntárias de Blumenau, em 1980.  Atualmente a entidade atende crianças e adolescentes de 0 a 14 anos de idade, na modalidade de Educação Infantil e no Programa Jornada Ampliada, incluindo crianças e adolescentes do Programa de Erradicação do Trabalho Infantil em período de contra-turno escolar", cnpj: "", website: "https://ongsaoroquebnu.wordpress.com/sobre/", verified: false, street: "Rua São João", number: "701", district: "Itoupava Norte", city: "Blumenau", state: "Santa Catarina", country: "Brazil", email: "ongsaoroque@bol.com.br", latitude: "-26.888634", longitude: "-49.07182", phone_number: "4799998907"},
+    {id: 497, name: "FloripAmanhã", description: "A Associação FloripAmanhã foi fundada em 2005 por iniciativa de cidadãos conscientes, dos mais diversos setores, que amam Florianópolis e desejam tornar a cidade cada vez melhor: preservada, planejada, inovadora, segura. A FloripAmanhã se propõe a ser a instância onde essa cidade – que todos nós queremos– será pensada e defendida", cnpj: "", website: "http://floripamanha.org/", verified: false, street: "Praça Olívio Amorim", number: "120", district: "Centro", city: "Florianópolis", state: "Santa Catarina", country: "Brazil", email: "floripamanha@gmail.com", latitude: "-27.595535", longitude: "-48.544745", phone_number: " (48) 3225-5815"},
+    {id: 498, name: "Lar Fabiano de Cristo (lfc)", description: "O Lar Fabiano de Cristo foi fundado em 8 de janeiro de 1958, a partir da ideia de estudiosos do Evangelho que desejaram sair dos estudos teóricos sobre a caridade para a prática efetiva. ", cnpj: "", website: "https://lfc.org.br/contato/", verified: false, street: "Rua Frei Fabiano de Cristo", number: "180", district: "Monte Cristo", city: "Florianópolis", state: "Santa Catarina", country: "Brazil", email: "contato@ifc.org.br", latitude: "-27.590847", longitude: "-48.598359", phone_number: " (48) 3244-3790"},
+    {id: 499, name: "Verde Vida Programa Oficina Educativa", description: "Uma Organização Não-Governamental que não visa lucros e atua desde 1994 no município de Chapecó, desenvolvendo um importante trabalho social, educacional e ambiental. Uma organização certificada e reconhecida como de utilidade pública municipal, estadual e federal. Os trabalhos são desenvolvidos nas áreas de assistência social, educação e meio ambiente, oferecendo oficinas sócio-educativas aos adolescentes com o objetivo de proporcionar uma formação para a vida e o encaminhamento para o primeiro emprego.O Verde Vida Programa Oficina Educativa mantém sua sustentabilidade com a coleta de materiais recicláveis e assim consegue gerar empregos e proporcionar atendimento sócio-educativo para adolescentes carentes, na faixa etária de 12 a 17 anos e que estejam freqüentando a escola.", cnpj: "", website: "http://www.verdevida.org.br/", verified: false, street: "Rua Marechal Floriano Peixoto", number: "2151", district: "Bom Pastor", city: "Chapecó", state: "Santa Catarina", country: "Brazil", email: "verdevida@verdevida.org.br", latitude: "-27.100149", longitude: "-52.593503", phone_number: "(49) 3322-2776"},
+    {id: 500, name: "Sítio Dona Lúcia - Abrigo de Animais", description: "O Sitio começou há 30 anos atrás, quando Dona Lúcia resgatou o primeiro cão de rua, e daí em diante, esse trabalho não parou mais. Munida pelo ideal de salvar os animais de rua, Dona Lúcia abriu as portas do seu sítio, e desde então o número de cães e gatos abandonados e resgatados vêm aumentando cada vez mais. Localizado em Blumenau - SC, o Sítio Dona Lúcia é considerado um dos maiores abrigos de animais do estado. O Sitio começou há 30 anos atrás, quando Dona Lúcia resgatou o primeiro cão de rua, e daí em diante, esse trabalho não parou mais. Munida pelo ideal de salvar os animais de rua, Dona Lúcia abriu as portas do seu sítio, e desde então o número de cães e gatos abandonados e resgatados vêm aumentando cada vez mais. Localizado em Blumenau - SC, o Sítio Dona Lúcia é considerado um dos maiores abrigos de animais do estado.", cnpj: "", website: "https://www.sitiodonalucia.com.br/", verified: false, street: "Rua Viena", number: "5431", district: "Vila Itoupava", city: "Blumenau", state: "Santa Catarina", country: "Brazil", email: "falecom@sitiodonalucia.com.br", latitude: "-26.744983", longitude: "-49.108938", phone_number: "(47) 3322-2207"},
+    {id: 501, name: "Instituto Mãe Terra", description: "Promover o desenvolvimento social, econômico, cultural e ambiental de comunidades rurais, periféricas e tradicionais, através do apoio às suas organizações, práticas e estratégias sociais que busquem soluções sustentáveis de melhoria das condições de vida de seus territórios, na perspectiva do empoderamento comunitário e formação para autonomia.", cnpj: "05010507000140", website: "https://www.maeterra.org.br", verified: false, street: "Rua Antonio Osorio Batista", number: "103", district: "Centro", city: "Porto Seguro", state: "Bahia", country: "Brazil", email: "faleconosco@maeterra.org.br", latitude: "-16.44944", longitude: "-39.133911", phone_number: '(73) 3268-5447'},
+    {id: 502, name: "Associação Assistencial Lar Betânia", description: "A entidade atende em suas duas unidades, cerca de 385 crianças e adolescentes em situação de vulnerabilidade social. No âmbito de profissionais a unidade conta com cerca de 45 pessoas de diversas áreas como:  pedagogia, serviço social, nutricionista, educadores, cozinheiras, zeladoras, voluntários, entre outros.", cnpj: "", website: "https://www.larbetania.org.br/contato", verified: false, street: "Rua Konrad Adenauer", number: "90", district: "Ponta Aguda", city: "Blumenau", state: "Santa Catarina", country: "Brazil", email: "contato@larbetania.org.br", latitude: "-26.901711", longitude: "-49.047336", phone_number: '(47) 3322-2207'},
+    {id: 503, name: "Casa de Apoio Blumenau", description: "A Associação Casa de Apoio iniciou suas atividades em 12.04.2003, com o objetivo de garantir o tratamento oncológico às crianças de Blumenau, como também orientação, informação, aceitação pelos familiares a cerca do diagnóstico. Com local e estrutura montada, estendeu o atendimento às crianças com paralisia cerebral, mielominingocele e síndromes. A Casa de Apoio atende Blumenau e municípios da região AMMVI, oferecendo espaço adequado para acolhê-las, inclusive com hospedagem para quem necessitar durante o tratamento.", cnpj: "", website: "http://casadeapoioblumenau.com.br/", verified: false, street: "R. La Paz", number: "38", district: "Ponta Aguda", city: "Blumenau", state: "Santa Catarina", country: "Brazil", email: "contato@casadeapoioblumenau.com.br", latitude: "-26.905806", longitude: "-49.066316", phone_number: '(47) 3035-3349'},
+    {id: 504, name: "ONG DIREITO DE VIVER COM SAÚDE", description: "A Reviva ONG DIREITO DE VIVER COM SAÚDE surgiu da união de amigos solidários que trabalham em favor de pessoas humildes ajudando idosos, pessoas que sofrem com doenças terminais e crianças especiais que necessitam de atendimento diferenciado. Esse cuidado é o mínimo que se pode dar para essas famílias humildes.", cnpj: "", website: "https://www.instagram.com/ongrespeitonaotemcor", verified: false, street: "Av. Capitão Thomáz Carvalho de Camargo", number: "897", district: "Cidade Jardim", city: "São José dos Pinhais", state: "Paraná", country: "Brazil", email: "contato@ongsaudereviva.org.br", latitude: "-25.508958", longitude: "-49.207471", phone_number: '413209400'},
+    {id: 505, name: "ONG Brasil Melhor", description: "O projeto social BRASIL MELHOR foi fundado em 2006 com intuito de levar às pessoas, cursos profissionalizantes, principalmente na área cultural.\r\nTeatro, dança, música, circo e outros cursos eram ensinados à jovens de diversos lugares de BH.\r\nDiversos projetos itinerantes já foram executados durante todos esses anos nos diversos bairros de Belo Horizonte aonde mais de 2.000 jovens já tiveram a oportunidade de fazer um desses cursos.", cnpj: "", website: "https://www.facebook.com/ProjetoBrasilMelhor/?ref=aymt_homepage_panel", verified: false, street: "R. Cristiano Otoní", number: "133", district: "Santa Terezinha", city: "Belo Horizonte", state: "Minas Gerais", country: "Brazil", email: "brasilmelhorong@gmail.com", latitude: "-19.869511", longitude: "-44.002922", phone_number: '03133476792'},
+    {id: 506, name: "NAAÇÃO", description: "NAAÇÃO é uma iniciativa independente que trabalha para ajudar pessoas que vivem em situações de risco e crises humanitárias.  A propósito, somos uma ONG de Belo Horizonte (MG) e tudo começou com foco no desenvolvimento de lideranças sociais.\r\nHá cerca de 5 anos começamos esse movimento e nossas ações nos levou até Brumadinho para ajudar as vítimas do rompimento da barragem, em janeiro de 2019. Além disso, em conjunto com as lideranças locais de cada comunidade, promovemos soluções eficazes para combater a falta de assistência médica, a fome, a vulnerabilidade e ainda fornecer mais recursos para a educação. Assim, trabalhamos em regiões onde as pessoas vivem sob risco humanitário com objetivo de oferecer meios e recursos que ofereçam impacto positivo direto às famílias necessitadas.", cnpj: "", website: "https://naacao.com.br/", verified: false, street: "Av. Dom Pedro II", number: "1689", district: "Carlos Prates", city: "Belo Horizonte", state: "Minas Gerais", country: "Brazil", email: "contato@naacao.com.br", latitude: "-19.909864", longitude: "-43.965401", phone_number: '(31) 99197-3535'},
+    {id: 507, name: "Alô Vida", description: "O Alô Vida é uma entidade filantrópica, sem fins lucrativos, cujo objetivo é atender as pessoas que precisam desabafar. Por meio do diálogo, aceitação incondicional e doação de calor humano, escutamos com total sigilo e privacidade. Os atendimentos são gratuitos e realizados todos os dias da semana.", cnpj: "", website: "https://alovida.org.br/quem-somos/", verified: false, street: "R. Jataí", number: "1058", district: "Graça", city: "Belo Horizonte", state: "Minas Gerais", country: "Brazil", email: "alovida@alovida.org.br", latitude: "-19.897374", longitude: "-43.933658", phone_number: '(31) 3444-1818'},
+    {id: 508, name: "APAM - Associação de Promoção à Menina", description: "A APAM nasceu no ano de 1987. É uma entidade de assistência social sem fins lucrativos e com diretoria própria. É mantida através de termos de colaboração com órgãos públicos e de doações de pessoas físicas e jurídicas da comunidade.\r\nTem por finalidade proporcionar assistência e promoção social e cultural às crianças e adolescentes no desenvolvimento integral, bem como promover seus familiares visando a garantia de seus direitos e deveres na sociedade.", cnpj: "", website: "https://www.apampontagrossa.org.br/", verified: false, street: "Rua República de São Salvador", number: "870", district: "Madureira", city: "Ponta Grossa", state: "Paraná", country: "Brazil", email: "admin@apampontagrossa.org.br", latitude: "-25.077545", longitude: "-50.176466", phone_number: '(42) 3227-6048'},
+    {id: 509, name: "Casa de Apoio Solar PG", description: "Casa de Apoio sem fins lucrativos. Realizamos hospedagem, e acompanhamento de pacientes oncológicos em tratamento na cidade de Ponta Grossa.", cnpj: "", website: "https://www.instagram.com/casadeapoiosolar/", verified: false, street: "R. Rio Grande do Sul", number: "400", district: "Órfãs", city: "Ponta Grossa", state: "Paraná", country: "Brazil", email: "casaapoiosolar@gmail.com", latitude: "-25.069873", longitude: "-50.15829", phone_number: '042998375141'},
+    {id: 510, name: "aBRAÇO a Microcefalia ", description: "Associação aBRAÇO a Microcefalia, é uma associação civil de direito privado, sem fins lucrativos, que tem como finalidade promover o acolhimento e apoio às famílias de crianças com malformação congênita no sistema nervoso central, desenvolvendo o potencial máximo dessas crianças e promovendo sua inclusão social.", cnpj: "", website: "https://www.abracoamicrocefalia.org.br/", verified: false, street: "Des. Moacyr Pitta Lima,", number: "26", district: "Mussurunga I", city: "Salvador", state: "Bahia", country: "Brazil", email: "contato@abracoamicrocefalia.org.br", latitude: "-12.916792", longitude: "-38.367191", phone_number: '7199630-7875'}
+  ])
+  Activity.create!([
+    {id: 1, name: "Proteção a animais", used_count: 1},
+    {id: 2, name: "Religião", used_count: 1},
+    {id: 3, name: "Meio Ambiente", used_count: 2},
+    {id: 4, name: "Educação", used_count: 1},
+    {id: 5, name: "Assistência Social", used_count: 5},
+    {id: 6, name: "Saúde", used_count: 5},
+    {id: 7, name: "Comunidade", used_count: 10},
+    {id: 8, name: "Defesa de minorias", used_count: 1},
+    {id: 9, name: "Empreendedorismo", used_count: 0},
+    {id: 10, name: "Proteção Infantil", used_count: 3},
+    {id: 11, name: "Arte e Cultura", used_count: 1},
+    {id: 12, name: "Crises humanitárias", used_count: 1},
+    {id: 13, name: "Lideranças Sociais", used_count: 1}
+  ])
+  NgoActivity.create!([
+    {ngo_id: 497, activity_id: 7},
+    {ngo_id: 272, activity_id: 7},
+    {ngo_id: 272, activity_id: 10},
+    {ngo_id: 498, activity_id: 2},
+    {ngo_id: 498, activity_id: 7},
+    {ngo_id: 499, activity_id: 3},
+    {ngo_id: 499, activity_id: 4},
+    {ngo_id: 500, activity_id: 1},
+    {ngo_id: 501, activity_id: 3},
+    {ngo_id: 501, activity_id: 5},
+    {ngo_id: 501, activity_id: 7},
+    {ngo_id: 501, activity_id: 8},
+    {ngo_id: 502, activity_id: 5},
+    {ngo_id: 502, activity_id: 7},
+    {ngo_id: 502, activity_id: 10},
+    {ngo_id: 503, activity_id: 5},
+    {ngo_id: 503, activity_id: 6},
+    {ngo_id: 503, activity_id: 7},
+    {ngo_id: 504, activity_id: 6},
+    {ngo_id: 504, activity_id: 7},
+    {ngo_id: 506, activity_id: 7},
+    {ngo_id: 507, activity_id: 6},
+    {ngo_id: 508, activity_id: 5},
+    {ngo_id: 508, activity_id: 7},
+    {ngo_id: 508, activity_id: 10},
+    {ngo_id: 509, activity_id: 5},
+    {ngo_id: 509, activity_id: 6},
+    {ngo_id: 510, activity_id: 6},
+    {ngo_id: 510, activity_id: 7}
+  ])
+  

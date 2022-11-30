@@ -91,7 +91,7 @@ function showNgosMarkers(ngos) {
         )
         var name = ngo["name"];
         var address = ngo["address"];
-        var phoneNumber = "99999999";
+        var phoneNumber = ngo["phone"];
         var website = ngo["website"];
         var description = ngo["description"];
         bounds.extend(latlng);

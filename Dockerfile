@@ -17,6 +17,7 @@ RUN apt-get update -y \
     libpq-dev \
     default-mysql-client \
     vim \
+   graphviz \
     htop \
  && apt-get clean \
  && rm -f /var/lib/apt/lists/*_*
