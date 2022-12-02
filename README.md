@@ -84,7 +84,14 @@ Rodar migrações antes do primeiro acesso
 
 `rails db:seed`
 
-Para exibir o mapa corretamente é necessário alterar o seguinte trecho com uma variável de ambiente [ENV['MAPS_API_KEY']] ou hard_coded em ```index.html.erb```
+As rotas padrões são:
+
+http://localhost:3003/ - home
+http://localhost:3003/admin - interface admin para acesso do mantenedor, se você rodou os seeds com sucesso. Provavelmente criou um adminstrador
+com os seguintes dados de acesso: usuario: admin@example.com, password: password.
+
+
+Para exibir o mapa corretamente é necessário alterar o seguinte trecho com uma variável de ambiente [ENV['MAPS_API_KEY']] ou 'hard coded' em ```index.html.erb```
 ```html
 <!-- You must replace 'googleMapsAPIKey' with a valid Google Maps API key in order to properly execute -->
 <script async        
