@@ -1,12 +1,17 @@
-<%= javascript_include_tag "map" %>
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDtifhn1_Dw9BNhRGINfb3f5l04WhS_wcs&callback=initMap" %>
 <!DOCTYPE html>
 <html>
     <header>
+        <%= javascript_include_tag "map" %>
+        <%= javascript_include_tag "shepherd" %>
+        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDtifhn1_Dw9BNhRGINfb3f5l04WhS_wcs&callback=initMap" %>
         <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     </header>
     <body>
         <div class="title">Voluntariar me</div>
+        <div>
+            <a id="myLink" href="#" onclick="createTour();" style=" margin-left: auto; float: right; font-size: 1.5em;">Tour Guiado</a>
+        </div>
         <div hidden>
          <%= form_with(url: '/home/index', method: 'get', local: true) do %>
             <%= text_field_tag(:search) %>
@@ -67,6 +72,63 @@
             src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAPS_API_KEY']%>&callback=initMap">
         </script>
         <script>
+            function createTour(){
+                const tour = new Shepherd.Tour({
+                    useModalOverlay: true,
+                    defaultStepOptions: {
+                        classes: 'shadow-md bg-purple-dark',
+                        scrollTo: true
+                    }
+                });
+
+                tour.addStep({
+                    id: 'initial-step',
+                    text: 'Bem vindo ao Voluntariar-me, esse portal possibilita que você busque ONGs por estado ou em um raio de 20km de uma localização.',
+                    attachTo: {
+                        element: '.title',
+                        on: 'bottom'
+                    },
+                    buttons: [
+                        {
+                        text: 'Próximo',
+                        action: tour.next
+                        }
+                    ]
+                });
+
+                tour.addStep({
+                    id: 'example-step',
+                    text: 'Informe aqui uma cidade ou estado para iniciar sua busca.',
+                    attachTo: {
+                        element: '.search-container',
+                        on: 'right'
+                    },
+                    buttons: [
+                        {
+                        text: 'Próximo',
+                        action: tour.next
+                        }
+                    ]
+                });
+
+                tour.addStep({
+                    text: 'Aqui serão listadas as ONGs relacionadas ao parametro de busca. Ao clicar em uma das opções será apresentado uma janela com informações de contato e uma breve descrição da ONG selecionada',
+                    attachTo: {
+                        element: '.store-container',
+                        on: 'right'
+                    },
+                    buttons: [
+                        {
+                        text: 'Fim',
+                        action: tour.complete
+                        }
+                    ]
+                });
+
+                tour.start();
+            }
+
+           
         </script>
     </body>
 </html>
