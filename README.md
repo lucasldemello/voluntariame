@@ -86,8 +86,8 @@ Rodar migrações antes do primeiro acesso
 
 As rotas padrões são:
 
-http://localhost:3003/ - home
-http://localhost:3003/admin - interface admin para acesso do mantenedor, se você rodou os seeds com sucesso. Provavelmente criou um adminstrador
+* home: http://localhost:3003/ - aplicação para o visitante.
+* admin: http://localhost:3003/admin - interface admin para acesso do mantenedor, se você rodou os seeds com sucesso. Provavelmente criou um adminstrador
 com os seguintes dados de acesso: usuario: admin@example.com, password: password.
 
 
